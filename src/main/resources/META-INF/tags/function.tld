@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" version="2.0">
+    <description>自定义标签库</description>
+    <tlib-version>1.0.0</tlib-version>
+    <short-name>f</short-name>
+    <uri>http://fanlychie.org/tags/function</uri>
+    <tag>
+        <description>Web 项目中 webapp 目录下的文件资源标签</description>
+        <name>file</name>
+        <tag-class>org.fanlychie.commons.jsp.tag.WebappFileTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>path</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <description>URL 链接标签</description>
+        <name>url</name>
+        <tag-class>org.fanlychie.commons.jsp.tag.URLConnectionTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>href</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>
