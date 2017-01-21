@@ -1,10 +1,10 @@
 package org.fanlychie.commons.jsp.tag;
 
 /**
- * Web 项目中 webapp 目录下的文件资源标签配置
+ * Web 项目中 webapp 目录下的资源文件标签配置
  * Created by fanlychie on 2017/1/19.
  */
-public final class WebappFileTagConfig {
+public final class WebappResourceTagConfig {
 
     /**
      * 版本号
@@ -17,7 +17,7 @@ public final class WebappFileTagConfig {
      * @param version 版本号字符串
      */
     public void setVersion(String version) {
-        WebappFileTagConfig.version = version;
+        WebappResourceTagConfig.version = version;
     }
 
 }

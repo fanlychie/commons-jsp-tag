@@ -6,9 +6,9 @@
     <short-name>f</short-name>
     <uri>http://fanlychie.org/tags/function</uri>
     <tag>
-        <description>Web 项目中 webapp 目录下的文件资源标签</description>
-        <name>file</name>
-        <tag-class>org.fanlychie.commons.jsp.tag.WebappFileTag</tag-class>
+        <description>Web 项目中 webapp 目录下的资源文件标签</description>
+        <name>resource</name>
+        <tag-class>org.fanlychie.commons.jsp.tag.WebappResourceTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>path</name>
@@ -24,6 +24,27 @@
         <attribute>
             <name>href</name>
             <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <description>日期标签</description>
+        <name>date</name>
+        <tag-class>org.fanlychie.commons.jsp.tag.DateTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>type</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>pattern</name>
+            <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>

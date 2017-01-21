@@ -7,10 +7,10 @@ import javax.servlet.jsp.PageContext;
 import java.io.IOException;
 
 /**
- * Web 项目中 webapp 目录下的文件资源标签
+ * Web 项目中 webapp 目录下的资源文件标签
  * Created by fanlychie on 2017/1/19.
  */
-public class WebappFileTag extends TagSupport {
+public class WebappResourceTag extends TagSupport {
 
     /**
      * 文件资源路径地址
@@ -24,7 +24,9 @@ public class WebappFileTag extends TagSupport {
             if (!path.startsWith("/")) {
                 contextPath += "/";
             }
-            writer.write(contextPath + path + "?v" + WebappFileTagConfig.version);
+            writer.write(contextPath + path + "?v" + WebappResourceTagConfig.version);
+        } else {
+            throw new IllegalArgumentException("<f:resource> 标签的 path 参数不能为空");
         }
     }
 
