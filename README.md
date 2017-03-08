@@ -8,7 +8,7 @@ JSP 自定义标签库
 <%@ taglib prefix="f" uri="http://fanlychie.org/tags/function" %>
 ```
 
-# <f:resource path="" />
+# &lt;f:resource path="" /&gt;
 
 此标签用于表示 web 项目中 webapp 目录下的资源文件。
 
@@ -30,7 +30,7 @@ JSP 自定义标签库
 <bean class="org.fanlychie.jsp.tag.WebappResourceTagConfig" p:version="1.0"/>
 ```
 
-# <f:url href="" />
+# &lt;f:url href="" /&gt;
 
 此标签用于表示链接地址，可以是 http 或 https 的绝对地址，也可以是相对于项目的相对地址：
 
@@ -41,7 +41,7 @@ JSP 自定义标签库
 <f:url href="/user/home" />
 ```
 
-# <f:datetime value="" />
+# &lt;f:datetime value="" /&gt;
 
 此标签用于将 java.util.Date 对象转成字符串表示：
 
