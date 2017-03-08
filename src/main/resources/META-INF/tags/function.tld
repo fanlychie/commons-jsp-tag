@@ -29,8 +29,8 @@
     </tag>
     <tag>
         <description>日期标签</description>
-        <name>date</name>
-        <tag-class>org.fanlychie.jsp.tag.DateTag</tag-class>
+        <name>datetime</name>
+        <tag-class>org.fanlychie.jsp.tag.DatetimeTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>value</name>

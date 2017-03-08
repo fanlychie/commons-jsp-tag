@@ -12,10 +12,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 日期标签
+ * 日期时间标签
  * Created by fanlychie on 2017/1/20.
  */
-public class DateTag extends TagSupport {
+public class DatetimeTag extends TagSupport {
 
     /**
      * 日期
