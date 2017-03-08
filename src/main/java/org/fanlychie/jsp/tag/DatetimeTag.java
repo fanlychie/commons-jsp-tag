@@ -64,7 +64,7 @@ public class DatetimeTag extends TagSupport {
     public void doTag(HttpServletRequest request, PageContext context, JspWriter writer) throws JspException, IOException {
         if (value != null) {
             if ((type == null || type.isEmpty()) && (pattern == null || pattern.isEmpty())) {
-                throw new IllegalArgumentException("you must set the value of type parameter or pattern parameter");
+                pattern = DATE_TIME_PATTERN;
             }
             if (type != null && !TYPE_PATTERN_MAP.containsKey(type)) {
                 throw new IllegalArgumentException("undefined type: " + type + ", optional values: date, time, datetime");
