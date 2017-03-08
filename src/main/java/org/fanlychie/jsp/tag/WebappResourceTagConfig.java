@@ -1,4 +1,4 @@
-package org.fanlychie.commons.jsp.tag;
+package org.fanlychie.jsp.tag;
 
 /**
  * Web 项目中 webapp 目录下的资源文件标签配置

@@ -8,7 +8,7 @@
     <tag>
         <description>Web 项目中 webapp 目录下的资源文件标签</description>
         <name>resource</name>
-        <tag-class>org.fanlychie.commons.jsp.tag.WebappResourceTag</tag-class>
+        <tag-class>org.fanlychie.jsp.tag.WebappResourceTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>path</name>
@@ -19,7 +19,7 @@
     <tag>
         <description>URL 链接标签</description>
         <name>url</name>
-        <tag-class>org.fanlychie.commons.jsp.tag.URLConnectionTag</tag-class>
+        <tag-class>org.fanlychie.jsp.tag.URLConnectionTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>href</name>
@@ -30,7 +30,7 @@
     <tag>
         <description>日期标签</description>
         <name>date</name>
-        <tag-class>org.fanlychie.commons.jsp.tag.DateTag</tag-class>
+        <tag-class>org.fanlychie.jsp.tag.DateTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>value</name>

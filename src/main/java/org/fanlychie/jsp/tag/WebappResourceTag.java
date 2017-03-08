@@ -1,4 +1,4 @@
-package org.fanlychie.commons.jsp.tag;
+package org.fanlychie.jsp.tag;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
