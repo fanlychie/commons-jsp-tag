@@ -25,8 +25,6 @@ public class WebappResourceTag extends TagSupport {
                 contextPath += "/";
             }
             writer.write(contextPath + path + "?v" + WebappResourceTagConfig.version);
-        } else {
-            throw new IllegalArgumentException("<f:resource> 标签的 path 参数不能为空");
         }
     }
 
