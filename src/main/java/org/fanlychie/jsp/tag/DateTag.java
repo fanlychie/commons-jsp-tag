@@ -36,43 +36,45 @@ public class DateTag extends TagSupport {
     private String pattern;
 
     /**
+     * 时间格式化模式串
+     */
+    private static final String TIME_PATTERN = "HH:mm:ss";
+
+    /**
+     * 日期格式化模式串
+     */
+    private static final String DATE_PATTERN = "yyyy-MM-dd";
+
+    /**
+     * 日期时间格式化模式串
+     */
+    private static final String DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
+
+    /**
      * 类型对照表
      */
-    private static final Map<String, String> TYPES = new HashMap<>();
+    private static final Map<String, String> TYPE_PATTERN_MAP = new HashMap<>();
 
     /**
      * 模式对照表
      */
-    private static final Map<String, DateFormat> FORMATS = new HashMap<>();
+    private static final Map<String, DateFormat> PATTERN_DATE_FORMAT_MAP = new HashMap<>();
 
     @Override
     public void doTag(HttpServletRequest request, PageContext context, JspWriter writer) throws JspException, IOException {
-        if (value == null) {
-            throw new NullPointerException("<f:date> 标签 value 参数值不能为 null");
-        }
-        if ((type == null || type.isEmpty()) && (pattern == null || pattern.isEmpty())) {
-            throw new IllegalArgumentException("<f:date> 标签 type 和 pattern 参数不能同时为 null");
-        }
-        if (type != null && pattern == null) {
-            pattern = TYPES.get(type);
-            if (pattern == null) {
-                throw new IllegalArgumentException("<f:date> 标签 不支持的 type 类型: " + type + ", 可选值: date, time, datetime");
+        if (value != null) {
+            if ((type == null || type.isEmpty()) && (pattern == null || pattern.isEmpty())) {
+                throw new IllegalArgumentException("you must set the value of type parameter or pattern parameter");
             }
-        }
-        DateFormat format = FORMATS.get(pattern);
-        if (format == null) {
-            format = new SimpleDateFormat(pattern);
-            FORMATS.put(pattern, format);
-        }
-        writer.write(format.format(value));
-    }
-
-    static {
-        TYPES.put("date", "yyyy-MM-dd");
-        TYPES.put("time", "HH:mm:ss");
-        TYPES.put("datetime", "yyyy-MM-dd HH:mm:ss");
-        for (String value : TYPES.values()) {
-            FORMATS.put(value, new SimpleDateFormat(value));
+            if (type != null && !TYPE_PATTERN_MAP.containsKey(type)) {
+                throw new IllegalArgumentException("undefined type: " + type + ", optional values: date, time, datetime");
+            } else {
+                pattern = TYPE_PATTERN_MAP.get(type);
+            }
+            if (!PATTERN_DATE_FORMAT_MAP.containsKey(pattern)) {
+                PATTERN_DATE_FORMAT_MAP.put(pattern, new SimpleDateFormat(pattern));
+            }
+            writer.write(PATTERN_DATE_FORMAT_MAP.get(pattern).format(value));
         }
     }
 
@@ -86,6 +88,15 @@ public class DateTag extends TagSupport {
 
     public void setPattern(String pattern) {
         this.pattern = pattern;
+    }
+
+    static {
+        TYPE_PATTERN_MAP.put("date", DATE_PATTERN);
+        PATTERN_DATE_FORMAT_MAP.put(DATE_PATTERN, new SimpleDateFormat(DATE_PATTERN));
+        TYPE_PATTERN_MAP.put("time", TIME_PATTERN);
+        PATTERN_DATE_FORMAT_MAP.put(TIME_PATTERN, new SimpleDateFormat(TIME_PATTERN));
+        TYPE_PATTERN_MAP.put("datetime", DATE_TIME_PATTERN);
+        PATTERN_DATE_FORMAT_MAP.put(DATE_TIME_PATTERN, new SimpleDateFormat(DATE_TIME_PATTERN));
     }
 
 }
