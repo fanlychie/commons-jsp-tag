@@ -15,7 +15,7 @@ JSP 自定义标签库
 <dependency>
     <groupId>org.fanlychie</groupId>
     <artifactId>jsp-tag</artifactId>
-    <version>1.0.2</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
