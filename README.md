@@ -2,6 +2,23 @@
 
 JSP 自定义标签库
 
+# 下载依赖
+
+```xml
+<repositories>
+    <repository>
+        <id>github-maven-repo</id>
+        <url>https://raw.github.com/fanlychie/maven-repo/releases</url>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>org.fanlychie</groupId>
+    <artifactId>jsp-tag</artifactId>
+    <version>1.0.2</version>
+</dependency>
+```
+
 # 引入标签库
 
 ```jsp
